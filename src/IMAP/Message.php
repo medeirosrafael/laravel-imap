@@ -134,8 +134,14 @@ class Message {
         $this->fetch_options = ($fetch_options) ? $fetch_options : config('imap.options.fetch', FT_UID);
 
         $this->parseHeader();
-        $this->parseBody();
+        //$this->parseBody();
     }
+
+   public function get()
+   {
+    $this->parseBody();
+    return $this;
+   }
 
     /**
      * Copy the current Messages to a mailbox
@@ -228,7 +234,7 @@ class Message {
         }
 
         if (property_exists($header, 'subject')) {
-            $this->subject = imap_utf8($header->subject);
+            $this->subject = iconv_mime_decode($header->subject);
         }
         if (property_exists($header, 'date')) {
             $this->date = Carbon::parse($header->date);
