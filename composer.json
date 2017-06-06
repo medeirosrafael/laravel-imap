@@ -1,7 +1,7 @@
 {
-    "name": "webklex/laravel-imap",
+    "name": "medeirosrafael/laravel-imap",
     "type": "library",
-    "description": "Laravel IMAP client",
+    "description": "Laravel IMAP client (forked)",
     "keywords": [
         "webklex",
         "laravel",
@@ -9,7 +9,7 @@
         "laravel-imap",
         "mail"
     ],
-    "homepage": "https://github.com/webklex/laravel-imap",
+    "homepage": "https://github.com/medeirosrafael/laravel-imap",
     "license": "MIT",
     "authors": [
         {
