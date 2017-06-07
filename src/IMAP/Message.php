@@ -232,7 +232,11 @@ class Message {
         if ($header) {
             $header = imap_rfc822_parse_headers($header);
         }
-
+	$this->references = '';
+        if(property_exists($header,'references')){
+             $this->references =  str_replace(['<', '>'], '', $header->references);
+             $this->references = str_replace(' ', ',', $this->references);
+         }
         if (property_exists($header, 'subject')) {
             $this->subject = iconv_mime_decode($header->subject);
         }
