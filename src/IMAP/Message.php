@@ -427,6 +427,10 @@ class Message {
                 }
             }
         }
+	$attachment->size = 0;
+	if(property_exists($structure, 'bytes')){
+		$attachment->size = $structure->bytes;
+	}
 
         if (!$attachment->name && property_exists($structure, 'parameters')) {
             foreach ($structure->parameters as $parameter) {
