@@ -430,7 +430,7 @@ class Message {
 
         if (!$attachment->name && property_exists($structure, 'parameters')) {
             foreach ($structure->parameters as $parameter) {
-                if ($parameter->attribute == "name") {
+                if (strtolower($parameter->attribute) == "name") {
                     $attachment->name = $parameter->value;
                     break;
                 }
