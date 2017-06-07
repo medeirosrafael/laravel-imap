@@ -438,14 +438,14 @@ class Message {
         }
 
         if(property_exists($attachment, 'name')){
-            if($attachment->name != false){
+            //if($attachment->name != false){
                 if ($attachment->id) {
                     $this->attachments[$attachment->id] = $attachment;
                 } else {
                     $this->attachments[] = $attachment;
                 }
             }
-        }
+        //}
     }
 
     /**
