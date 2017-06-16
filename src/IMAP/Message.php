@@ -240,9 +240,9 @@ class Message {
         if (property_exists($header, 'subject')) {
             $this->subject = iconv_mime_decode($header->subject);
         }
-        if (property_exists($header, 'date')) {
-            $this->date = Carbon::parse($header->date);
-        }
+//        if (property_exists($header, 'date')) {
+//            $this->date = Carbon::parse($header->date);
+//        }
 
         if (property_exists($header, 'from')) {
             $this->from = $this->parseAddresses($header->from);
