@@ -509,7 +509,7 @@ class Message {
     private function getEncoding($structure) {
         if (property_exists($structure, 'parameters')) {
             foreach ($structure->parameters as $parameter) {
-                if ($parameter->attribute == "charset") {
+                if (strtolower($parameter->attribute) == "charset") {
                     return strtoupper($parameter->value);
                 }
             }
