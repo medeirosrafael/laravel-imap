@@ -361,6 +361,9 @@ class Message {
 
                 $this->bodies['html'] = $body;
             }
+	else {
+                $this->fetchAttachment($structure, $partNumber);		
+		}
         } elseif ($structure->type == self::TYPE_MULTIPART) {
             foreach ($structure->parts as $index => $subStruct) {
                 $prefix = "";
