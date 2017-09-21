@@ -240,7 +240,7 @@ class Message {
         if (property_exists($header, 'subject')) {
 		try{
             $this->subject = iconv_mime_decode($header->subject);
-		}catch(\Exception) {
+		}catch(\Exception $e) {
 			$this->subject = 'Erro ao ler titulo';
 		}
         }
