@@ -238,7 +238,11 @@ class Message {
              $this->references = str_replace(' ', ',', $this->references);
          }
         if (property_exists($header, 'subject')) {
+		try{
             $this->subject = iconv_mime_decode($header->subject);
+		}catch(\Exception) {
+			$this->subject = 'Erro ao ler titulo';
+		}
         }
 //        if (property_exists($header, 'date')) {
 //            $this->date = Carbon::parse($header->date);
